@@ -49,4 +49,4 @@ d: Click Predict to generate risk score and recommendations.
 f: Download a PDF report if needed.
 
 
-
+Link to the video - https://atlantictu-my.sharepoint.com/:v:/r/personal/g00473082_atu_ie/Documents/Recordings/ScreencastFinalProjectSub.mp4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XvFwhd
