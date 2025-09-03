@@ -12,7 +12,10 @@ from ..schemas.submission import SubmissionOut
 
 router = APIRouter()
 
-# ---------- Load artifacts once ----------
+model = joblib.load("app/models/model.pkl")
+features = joblib.load("app/models/features.pkl")
+
+
 APP_DIR = os.path.dirname(os.path.dirname(__file__))        # .../app
 MODELS_DIR = os.path.join(APP_DIR, "models")
 MODEL_PATH = os.path.join(MODELS_DIR, "model.pkl")

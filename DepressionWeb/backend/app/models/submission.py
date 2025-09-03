@@ -6,12 +6,12 @@ class Submission(Base):
     __tablename__ = "predictions"
 
     id = Column(Integer, primary_key=True, index=True)
-    # Optional link to users.id (won't error if you don't use it)
+    
     user_id = Column(Integer, ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
 
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
-    # Form fields (store as text/number exactly as sent)
+    
     age = Column(Integer, nullable=False)
     marital_status = Column(String, nullable=False)
     education_level = Column(String, nullable=False)
@@ -28,8 +28,7 @@ class Submission(Base):
     family_history_of_depression = Column(String, nullable=False)
     chronic_medical_conditions = Column(String, nullable=False)
 
-    # Model output
+   
     risk_score = Column(Float, nullable=False)
 
-    # If you have a User model, you can uncomment this:
-    # user = relationship("User", backref="predictions")
+   
