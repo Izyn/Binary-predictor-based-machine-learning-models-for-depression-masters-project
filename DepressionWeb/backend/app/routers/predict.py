@@ -1,4 +1,3 @@
-# backend/app/routers/predict.py
 from fastapi import APIRouter, HTTPException, Depends, Header
 from pydantic import BaseModel, Field
 from typing import Literal, Optional, List
@@ -27,10 +26,10 @@ try:
 except Exception as e:
     raise RuntimeError(f"Failed to load model artifacts: {e}")
 
-# Create tables (ensures predictions table exists)
+
 Base.metadata.create_all(bind=engine)
 
-# ---------- DB session ----------
+
 def get_db():
     db = SessionLocal()
     try:
@@ -38,7 +37,7 @@ def get_db():
     finally:
         db.close()
 
-# ---------- Optional user extraction from JWT (best‑effort, safe if missing) ----------
+
 def extract_user_id(authorization: Optional[str], db) -> Optional[int]:
     """
     If you used the auth router that issues JWT with claim 'uid',
@@ -57,7 +56,7 @@ def extract_user_id(authorization: Optional[str], db) -> Optional[int]:
     except Exception:
         return None
 
-# ---------- UI schema (matches your form) ----------
+
 Marital = Literal["Single","Married","Divorced","Widowed"]
 Edu = Literal["High school","Associate Degree","Bachelor's Degree","Master's Degree","PhD"]
 Smoke = Literal["Smoker","Former","Non-smoker"]
@@ -85,7 +84,6 @@ class PredictUI(BaseModel):
     family_history_of_depression: YesNo
     chronic_medical_conditions: YesNo
 
-# ---------- Mapping helpers: UI -> model's 10 features ----------
 def _edu_onehot(edu: str) -> dict:
     cols = {
         "Education Level_High School": 0,
